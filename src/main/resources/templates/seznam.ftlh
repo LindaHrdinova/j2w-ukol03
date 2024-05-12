@@ -14,7 +14,7 @@
 <body>
 <div class="seznam">
     [#list seznamVizitek as vizitka]
-        <a href="/detail">
+        <a href="/detail/${vizitka?index}">
             <div class="vizitka">
                 <div class="jmeno">${vizitka.jmeno}</div>
                 <div class="firma">${vizitka.firma}</div>
@@ -24,9 +24,11 @@
                         <div><span>${vizitka.obecPsc}</span></div>
                     </div>
                     <div class="kontakty">
-                        <div><i class="las la-at"></i> <span>vizitka.email</span></div>
-                        <div><i class="las la-phone-alt"></i> <span>vizitka.telefon</span></div>
-                        <div><i class="las la-globe"></i> <span>vizitka.web</span></div>
+                        [#if vizitka.email??]
+                            <div><i class="las la-at"></i> <span>${vizitka.email}</span></div>
+                        [/#if]
+                        [#if vizitka.telefon??]<div><i class="las la-phone-alt"></i> <span>${vizitka.telefon}</span></div>[/#if]
+                        [#if vizitka.web??] <div><i class="las la-globe"></i> <span>${vizitka.web}</span></div>[/#if]
                     </div>
                 </div>
             </div>

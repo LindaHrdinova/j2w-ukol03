@@ -3,6 +3,7 @@ package cz.czechitas.java2webapps.ukol3.controller;
 import cz.czechitas.java2webapps.ukol3.entity.Vizitka;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -16,8 +17,9 @@ public class VizitkaController {
             new Vizitka("Dita (Přikrylová) Formánková", "Czechitas z. s.", "Václavské náměstí 837/11", "110 00", "dita@czechitas.cs", "+420 800123456", "www.czechitas.cz"),
             new Vizitka("Barbora Bühnová", "Czechitas z. s.", "Václavské náměstí 837/11", "110 00", null, "+420 800123456", "www.czechitas.cz"),
             new Vizitka("Monika Ptáčníková", "Czechitas z. s.", "Václavské náměstí 837/11", "110 00", "monika@czechitas.cs", "+420 800123456", "www.czechitas.cz"),
-            new Vizitka("Linda Hrdinová", "Buchtičkovi s. r. o.", "Kočičí 611", "130 00", "hrdinova.linda@seznam.cz", "731 204 555", "www.buchtickovi.cz"),
-            new Vizitka("Melichar von Buchtičkov", "Buchtičkovi s. r. o.", "Kočičí 611", "130 00", null, null, "www.buchtickovi.cz")
+            new Vizitka("Linda Hrdinová", "Buchtičkovi s. r. o.", "Kočičí 611", "130 00", "hrdinova.linda@seznam.cz", "+420 789 123 456", "www.buchtickovi.cz"),
+            new Vizitka("Melichar von Buchtičkov", "Buchtičkovi s. r. o.", "Kočičí 611", "130 00", null, null, "www.buchtickovi.cz"),
+            new Vizitka("princezna Polly", "Buchtičkovi s. r. o.", "Kočičí 611", "130 00", null, null, "www.buchtickovi.cz")
     );
 
     @GetMapping("/")
@@ -27,10 +29,10 @@ public class VizitkaController {
         return modelAndView;
     }
 
-    @GetMapping("/detail")
-    public ModelAndView detail() {
+    @GetMapping("/detail/{id}")
+    public ModelAndView detail(@PathVariable int id) {
         ModelAndView modelAndView = new ModelAndView("detail");
-        modelAndView.addObject("lekce", seznamVizitek);
+        modelAndView.addObject("seznamVizitek", seznamVizitek.get(id));
         return modelAndView;
     }
 }

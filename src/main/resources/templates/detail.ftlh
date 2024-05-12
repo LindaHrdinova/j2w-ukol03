@@ -12,30 +12,31 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-[#list seznamVizitek as vizitka]
-    <div class="detail">
-        <div class="vizitka">
-            <div class="jmeno">${seznamVizitek.jmeno}</div>
-            <div class="firma">Czechitas z. s.</div>
-            <div class="udaje">
-                <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
-                </div>
-                <div class="kontakty">
-                    <div><i class="las la-at"></i> <span>dita@czechitas.cs</span></div>
-                    <div><i class="las la-phone-alt"></i> <span>+420 800123456</span></div>
-                    <div><i class="las la-globe"></i> <span>www.czechitas.cz</span></div>
-                </div>
+<div class="detail">
+    <div class="vizitka">
+        <div class="jmeno">${seznamVizitek.jmeno}</div>
+        <div class="firma">${seznamVizitek.firma}</div>
+        <div class="udaje">
+            <div class="adresa">
+                <div>${seznamVizitek.ulice}</div>
+                <div><span>${seznamVizitek.obecPsc}</span> Praha</div>
+            </div>
+            <div class="kontakty">
+                [#if seznamVizitek.email??]
+                    <div><i class="las la-at"></i> <span>${seznamVizitek.email}</span></div>
+                [/#if]
+                [#if seznamVizitek.telefon??]
+                    <div><i class="las la-phone-alt"></i> <span>+420 800123456</span></div>[/#if]
+                [#if seznamVizitek.web??]
+                    <div><i class="las la-globe"></i> <span>www.czechitas.cz</span></div>[/#if]
             </div>
         </div>
-
-        <div class="mapa">
-            <iframe style="border:none" src="https://frame.mapy.cz/?q=${"Václavské náměstí 837/11, Praha"?url("UTF-8")}"
-                    width="100%" height="100%" frameborder="0"></iframe>
-        </div>
-
     </div>
-[/#list]
+
+    <div class="mapa">
+        <iframe style="border:none" src="https://frame.mapy.cz/?q=${"Václavské náměstí 837/11, Praha"?url("UTF-8")}"
+                width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</div>
 </body>
 </html>
