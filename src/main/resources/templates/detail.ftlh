@@ -13,7 +13,7 @@
 <body>
 <div class="detail">
     <div class="vizitka">
-        <div class="jmeno">Dita (Přikrylová) Formánková</div>
+        <div class="jmeno">${seznamVizitek.jmeno}</div>
         <div class="firma">Czechitas z. s.</div>
         <div class="udaje">
             <div class="adresa">

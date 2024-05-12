@@ -14,7 +14,7 @@
 <div class="seznam">
     <a href="/detail">
         <div class="vizitka">
-            <div class="jmeno">Dita (Přikrylová) Formánková</div>
+            <div class="jmeno">vizitka.jmeno</div>
             <div class="firma">Czechitas z. s.</div>
             <div class="udaje">
                 <div class="adresa">
