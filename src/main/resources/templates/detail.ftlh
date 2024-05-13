@@ -34,7 +34,7 @@
     </div>
 
     <div class="mapa">
-        <iframe style="border:none" src="https://frame.mapy.cz/?q=${"Václavské náměstí 837/11, Praha"?url("UTF-8")}"
+        <iframe style="border:none" src="https://frame.mapy.cz/?q=${seznamVizitek.celaAdresa?url("UTF-8")}"
                 width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>

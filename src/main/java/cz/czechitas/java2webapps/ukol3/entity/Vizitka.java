@@ -5,18 +5,23 @@ public class Vizitka {
     private String firma;
     private String ulice;
     private String obecPsc;
-    private String celaAdresa; // ulice + psc
+    private String celaAdresa;
     private String email;
     private String telefon;
     private String web;
 
 
-    public Vizitka() {};
+    public Vizitka() {
+    }
+
+    ;
+
     public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web) {
         this.jmeno = jmeno;
         this.firma = firma;
         this.ulice = ulice;
         this.obecPsc = obecPsc;
+        this.celaAdresa = celaAdresa;
         this.email = email;
         this.telefon = telefon;
         this.web = web;
@@ -58,8 +63,8 @@ public class Vizitka {
         return celaAdresa;
     }
 
-    public void setCelaAdresa(String celaAdresa) {
-        this.celaAdresa = celaAdresa;
+    public void setCelaAdresa(String ulice, String obecPsc) {
+        this.celaAdresa = ulice + ", " + obecPsc;
     }
 
     public String getEmail() {
