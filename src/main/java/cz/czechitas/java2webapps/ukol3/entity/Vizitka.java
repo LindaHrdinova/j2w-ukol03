@@ -59,14 +59,6 @@ public class Vizitka {
         this.obecPsc = obecPsc;
     }
 
-    public String getCelaAdresa() {
-        return celaAdresa;
-    }
-
-    public void setCelaAdresa(String ulice, String obecPsc) {
-        this.celaAdresa = ulice + ", " + obecPsc;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -90,8 +82,8 @@ public class Vizitka {
     public void setWeb(String web) {
         this.web = web;
     }
-}
 
-/*
-celaAdresa (readonly property, ve tvaru „ulice, obecPsc“)
-*/
+    public String getCelaAdresa() {
+        return ulice + ", " + obecPsc;
+    }
+}
